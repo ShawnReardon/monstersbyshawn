@@ -17,7 +17,6 @@ class Game:
   def createTrainers(self):
     trainer1Name = input("Input Trainer 1's name: ")
     is_human =input("Is Trainer1 Human, Y or N ")
-    print(is_human)
     if is_human not in ('Y', 'y', 'N', 'n'):
       print('Not Valid Input')
    
