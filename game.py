@@ -8,10 +8,11 @@ def alive(monster): #check if the monster is alive
         return False
       
 class Game:
-  def __init__(self, monsterDictionary):
+  def __init__(self, monsterDictionary, monsterList):
     self.trainer1 = None
     self.trainer2 = None
     self.monsterDictionary = monsterDictionary
+    self.monsterList = monsterList
     self.createTrainers()
 
   def createTrainers(self):
@@ -33,9 +34,13 @@ class Game:
   #def mainLoops(self):
   def battle(self): #battle between two trainers
       fight1, fight2 = True, True
+      i = 0
       while fight1 and fight2:
-        print ('Choose a monster:', self.trainer1.monstername)
-        monster1 = self.monsterDictionary[input()]
+        print ('Choose a monster: ')
+        for item in self.monsterList:
+          print(i+1, self.monsterList[i][0])
+          i += 1
+        monster1 = self.monsterDictionary[self.monsterList[int(input())-1][0]]
         while not alive(monster1):
             print (monster1.name, 'is out of batlle. Choose another monster')
             monster1 = eval(input())
