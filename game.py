@@ -36,10 +36,11 @@ class Game:
       fight1, fight2 = True, True
       i = 0
       while fight1 and fight2:
-        print ('Choose a monster: ')
+        
         for item in self.monsterList:
           print(i+1, self.monsterList[i][0])
           i += 1
+        print (self.trainer1.name, 'choose a monster by entering #', end = ' ')  
         monster1 = self.monsterDictionary[self.monsterList[int(input())-1][0]]
         while not alive(monster1):
             print (monster1.name, 'is out of batlle. Choose another monster')
